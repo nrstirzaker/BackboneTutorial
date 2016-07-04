@@ -1,0 +1,17 @@
+{
+  "name": "backbonetutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bootstrap.min.js",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "faker": "^3.0.1",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Austin Wyman",
+      "email": "Gina_Bechtelar@hotmail.com"
+    },
+    {
+      "id": 1,
+      "name": "Verla Kuvalis",
+      "email": "Gia12@hotmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Lorenza Mann Mr.",
+      "email": "Morgan_Swaniawski42@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Magnolia Lebsack",
+      "email": "Name_Koelpin@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Imogene Kilback",
+      "email": "Katelin7@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Anika Jerde",
+      "email": "Karianne.Kilback@hotmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Oceane Haley",
+      "email": "Hans.Eichmann@yahoo.com"
+    },
+    {
+      "id": 7,
+      "name": "Jake Stracke",
+      "email": "Xander_Rohan47@yahoo.com"
+    },
+    {
+      "id": 8,
+      "name": "Lera Ernser",
+      "email": "Ivy19@yahoo.com"
+    },
+    {
+      "id": 9,
+      "name": "London Ebert",
+      "email": "Philip1@yahoo.com"
+    }
+  ]
+}

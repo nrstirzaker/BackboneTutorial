@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Backbone tutorial</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <h1>User Manager</h1>
+        <hr/>
+        <h4>
+        <div class="page">
+
+        </div>
+            </h4>
+    </div>
+
+    <script id="PersonTemplate" type="text/x-handlebars-template">
+        <div>
+            {{name}}
+            {{email}}
+        </div>
+    </script>
+
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>-->
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>-->
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>-->
+
+
+
+
+    <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+    <!--<script src="/scripts/jquery-min.map"></script>-->
+    <script type="text/javascript" src="/scripts/underscore-min.js"></script>
+    <script type="text/javascript" src="/scripts/backbone-min.js"></script>
+    <script type="text/javascript" src="/scripts/handlebars-v3.0.3.js"></script>
+
+<script>
+
+    var Users = Backbone.Collection.extend({
+       url:'/users'
+    });
+
+    var UserListView = Backbone.View.extend({
+        el:'.page',
+        render:function(){
+            console.log('render called');
+            var self = this;
+            var users = new Users();
+            users.fetch({
+                'success':function(users){
+                    console.log('success');
+                    // also do this in the initialize event
+                    var source = $('#PersonTemplate').html();
+                    var template = Handlebars.compile(source);
+                    var html = template(JSON.stringify( users.get(0)));
+
+                    console.log('json:' + users.get(0).toJSON());
+                    console.log('html:' + html);
+
+
+                    self.$el.html(html);
+                },
+                'fail':function(){
+                    console.log('fail');
+                }
+
+            })
+
+        }
+    })
+
+    var userList = new UserListView();
+
+    var Router = Backbone.Router.extend({
+                routes:{
+                    '':'home'
+                }
+            });
+    var router = new Router();
+    router.on('route:home',function(){
+        console.log('route:home');
+        userList.render();
+    })
+
+    Backbone.history.start();
+</script>
+
+</body>
+</html>
